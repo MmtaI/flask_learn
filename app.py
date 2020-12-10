@@ -210,6 +210,7 @@ def app_run():
 
 
 if __name__ == '__main__':
+    pass
     # init_db('drop')
     # admin('admin', '123456')
-    app.run()
+    # app.run()
