@@ -7,7 +7,7 @@ from flask_login import LoginManager, UserMixin, login_user, logout_user, login_
 
 app = Flask(__name__)
 
-encoding: 'utf-8'
+encoding = 'utf-8'
 # WIN = sys.platform.startswith('win')   # sqlite数据库
 # if WIN:  # 如果是 Windows 系统，使用三个斜线
 #     prefix = 'sqlite:///'
