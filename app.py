@@ -54,8 +54,8 @@ def admin(name, pwd):
     db.session.commit()
 
 
-# @app.cli.command()  # 注册为命令
-# @click.option('--drop', is_flag=True, help='Create after drop.')  # 设置选项
+@app.cli.command()  # 注册为命令
+@click.option('--drop', is_flag=True, help='Create after drop.')  # 设置选项
 def init_db(drop):
     """初始化数据库"""
     if drop:  # 判断是否输入了选项
@@ -65,7 +65,7 @@ def init_db(drop):
     click.echo('初始化数据库')  # 输出提示信息
 
 
-# @app.cli.command()
+@app.cli.command()
 def forge():
     db.create_all()
     name = 'Grey Li'
@@ -199,6 +199,12 @@ def inject_user():
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404
+
+
+@app.cli.command()
+def app_run():
+    app.run()
+    click.echo('运行ing')
 
 
 if __name__ == '__main__':
