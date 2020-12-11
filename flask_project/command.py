@@ -20,13 +20,15 @@ def admin(name, pwd):
 
 @app.cli.command()  # 注册为命令
 @click.option('--drop', is_flag=True, help='Create after drop.')  # 设置选项
-def init_db(drop):
+def initdb(drop):
     """初始化数据库"""
     if drop:  # 判断是否输入了选项
         db.drop_all()
-    db.create_all()
-    forge()
-    click.echo('初始化数据库')  # 输出提示信息
+        db.create_all()
+        click.echo('drop database & init database')
+    else:
+        db.create_all()
+        click.echo('初始化数据库')  # 输出提示信息
 
 
 @app.cli.command()
