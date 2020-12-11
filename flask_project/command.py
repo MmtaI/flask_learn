@@ -6,15 +6,19 @@ import click
 
 
 @app.cli.command()
-def admin(name, pwd):
+@click.option('--m', required=True, nargs=2)
+def admin(m):
+    m = list(m)
+    name = m[0]
+    pwd = m[1]
     user = User.query.first()
     if user is None:
-        pwd = user.set_password(pwd)  # 设置密码
+        pwd = User().set_password(password=pwd)  # 设置密码
         user = User(username=name, password=pwd, name='Grey Li')
         db.session.add(user)
     else:
-        user.username = name
-        user.set_password(pwd)
+        user.username = m
+        user.set_password(m[1])
     db.session.commit()
 
 
@@ -55,5 +59,7 @@ def forge():
         db.session.add(movie)
     db.session.commit()
     click.echo('Done')
+
+
 
 
