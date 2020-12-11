@@ -1,7 +1,7 @@
 # coding=utf-8
 
 from flask_project import app, db
-from models import User, Movie
+from flask_project.models import User, Movie
 import click
 
 

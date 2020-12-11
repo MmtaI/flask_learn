@@ -1,1 +1,1 @@
-FLASK_APP = flask_project
+FLASK_APP=flask_project

@@ -9,6 +9,7 @@ flask-sqlalchemy = "*"
 flask-login = "*"
 pymysql = "*"
 click = "*"
+python-dotenv = "*"
 
 [dev-packages]
 

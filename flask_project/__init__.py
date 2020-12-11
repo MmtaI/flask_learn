@@ -3,7 +3,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
-from flask_project.models import User, Movie
 
 
 # WIN = sys.platform.startswith('win')   # sqlite数据库
@@ -24,13 +23,18 @@ login_manager.login_view = 'login'
 
 @login_manager.user_loader
 def load_user(user_id):  # 创建用户加载回调函数，接受用户 ID 作为参数
+    from flask_project.models import User
     user = User.query.get(int(user_id))  # 用 ID 作为 User 模型的主键查询对应的用户
     return user  # 返回用户对象
 
 
 @app.context_processor  # 定义了自动引入的变量user，往后的页面都会自动带上user这个参数
 def inject_user():
+    from flask_project.models import User
     user = User.query.first()
     return dict(user=user)
+
+
+from flask_project import views, errors, command
 
 
