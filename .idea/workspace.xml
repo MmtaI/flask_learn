@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="efd91fa6-c7e7-4ca3-8c08-1419c0a25506" name="Default Changelist" comment="kali add first">
-      <change afterPath="$PROJECT_DIR$/command.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db.py" afterDir="false" />
+    <list default="true" id="efd91fa6-c7e7-4ca3-8c08-1419c0a25506" name="Default Changelist" comment="kali add 2">
+      <change afterPath="$PROJECT_DIR$/flask_project/command.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flask_project/errors.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flask_project/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flask_project/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/command.py" beforeDir="false" afterPath="$PROJECT_DIR$/flask_project/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/flask_project/static/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/totoro.gif" beforeDir="false" afterPath="$PROJECT_DIR$/flask_project/static/totoro.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/flask_project/templates/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/flask_project/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/flask_project/templates/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/flask_project/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/flask_project/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/setting.html" beforeDir="false" afterPath="$PROJECT_DIR$/flask_project/templates/setting.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,8 +45,13 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/flask_project" />
+    </key>
+  </component>
   <component name="RunManager">
-    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="views" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="flask_learn" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -48,7 +63,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/flask_project/views.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -59,7 +74,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.app" />
+        <item itemvalue="Python.views" />
       </list>
     </recent_temporary>
   </component>
@@ -82,7 +97,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607584735912</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="kali add 2">
+      <created>1607658716416</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1607658716417</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -99,6 +121,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="kali add" />
-    <option name="LAST_COMMIT_MESSAGE" value="kali add" />
+    <MESSAGE value="kali add 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="kali add 2" />
   </component>
 </project>
