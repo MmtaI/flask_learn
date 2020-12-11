@@ -6,15 +6,13 @@ from flask_login import LoginManager
 from flask_project.models import User, Movie
 
 
-app = Flask(__name__)
-
-
 # WIN = sys.platform.startswith('win')   # sqlite数据库
 # if WIN:  # 如果是 Windows 系统，使用三个斜线
 #     prefix = 'sqlite:///'
 # else:  # 否则使用四个斜线
 #     prefix = 'sqlite:////'
 
+app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:1234567@localhost:3306/flask_base'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # 对模型修改的监控
 app.config["SQLALCHEMY_COMMIT_ON_TEARDOWN"] = True  # 每次请求结束后都会自动提交数据库中的变动
