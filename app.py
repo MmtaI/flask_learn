@@ -16,7 +16,7 @@ app = Flask(__name__)
 # else:  # 否则使用四个斜线
 #     prefix = 'sqlite:////'
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:123456@localhost:3306/flask_base'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:1234567@localhost:3306/flask_base'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # 对模型修改的监控
 app.config["SQLALCHEMY_COMMIT_ON_TEARDOWN"] = True  # 每次请求结束后都会自动提交数据库中的变动
 app.config['SECRET_KEY'] = 'dev'  # 等同于 app.secret_key = 'dev'
@@ -29,7 +29,7 @@ class User(db.Model, UserMixin):  # 表名将会是 user（自动生成，小写
     id = db.Column(db.Integer, primary_key=True)  # 主键
     name = db.Column(db.String(20))  # 名字
     username = db.Column(db.String(20))  # 用户名
-    password = db.Column(db.String(128))  # 密码散列值
+    password = db.Column(db.String(128))  # 密码散列值db.db.
 
     def set_password(self, password):  # 用来设置密码的方法，接受密码作为参数
         self.password = generate_password_hash(password)  # 将生成的密码保持到对应字段
@@ -40,8 +40,8 @@ class User(db.Model, UserMixin):  # 表名将会是 user（自动生成，小写
 
 class Movie(db.Model):
     id = db.Column(db.Integer, primary_key=True)  # 主键
-    title = db.Column(db.String(60))  # 电影标题
-    year = db.Column(db.String(4))  # 电影年份
+    title = db.Column(db.String(60), primary_key=False)  # 电影标题
+    year = db.Column(db.String(4), primary_key=False)  # 电影年份
 
 
 def admin(name, pwd):
@@ -210,7 +210,8 @@ def app_run():
 
 
 if __name__ == '__main__':
-    pass
+    # pass
     # init_db('drop')
+    # forge()
     # admin('admin', '123456')
-    # app.run()
+    app.run()
