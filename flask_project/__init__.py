@@ -1,8 +1,13 @@
 # coding=utf-8
 
+
+from importlib import reload
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 
 # WIN = sys.platform.startswith('win')   # sqlite数据库

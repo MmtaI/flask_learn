@@ -17,8 +17,8 @@ def admin(m):
         user = User(username=name, password=pwd, name='Grey Li')
         db.session.add(user)
     else:
-        user.username = m
-        user.set_password(m[1])
+        user.username = name
+        user.set_password(pwd)
     db.session.commit()
 
 
