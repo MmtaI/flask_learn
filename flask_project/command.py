@@ -38,7 +38,7 @@ def initdb(drop):
 @app.cli.command()
 def forge():
     db.create_all()
-    name = 'Grey Li'
+    # name = 'Grey Li'
     movies = [
                 {'title': 'My Neighbor Totoro', 'year': '1988', 'user_id': 1},
                 {'title': 'Dead Poets Society', 'year': '1989', 'user_id': 1},
@@ -52,8 +52,6 @@ def forge():
                 {'title': 'The Pork of Music', 'year': '2012', 'user_id': 1},
                 {'title': '大家好，我是旺哥', 'year': '2020', 'user_id': 1}
     ]
-    name = User(name=name)
-    db.session.add(name)
     for i in movies:
         movie = Movie(title=i['title'], year=i['year'], user_id=i['user_id'])
         db.session.add(movie)

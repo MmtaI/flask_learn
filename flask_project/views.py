@@ -111,7 +111,6 @@ def sign_in():
         name = request.form.get('name')
         username = request.form.get('username')
         pwd = request.form.get('password')
-        print(pwd)
         if not name or len(name) > 20 or len(name) < 5:
             flash('Wrong name')
             return redirect(url_for('sign_in'))
@@ -122,13 +121,18 @@ def sign_in():
             flash('Wrong password')
             return redirect(url_for('sign_in'))
         else:
-            pwd = User().set_password(password=pwd)  # 设置密码
-            print(pwd)
-            user = User(username=username, password=pwd, name=name)
-            db.session.add(user)
-            db.session.commit()
-            flash('registered successfully ')
-            return redirect(url_for('login'))
+            users = User.query.all()
+            for i in users:
+                if username not in i.username:
+                    pwd = User().set_password(password=pwd)  # 设置密码
+                    user = User(username=username, password=pwd, name=name)
+                    db.session.add(user)
+                    db.session.commit()
+                    flash('registered successfully ')
+                    return redirect(url_for('login'))
+                else:
+                    flash('Duplicate username ')
+                    return redirect(url_for('sign_in'))
     return render_template('sign_in.html')
 
 

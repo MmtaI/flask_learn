@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="efd91fa6-c7e7-4ca3-8c08-1419c0a25506" name="Default Changelist" comment="kali_chonggou_006">
-      <change afterPath="$PROJECT_DIR$/flask_project/templates/sign_in.html" afterDir="false" />
+    <list default="true" id="efd91fa6-c7e7-4ca3-8c08-1419c0a25506" name="Default Changelist" comment="kali_chonggou_zhuce">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flask_project/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/flask_project/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flask_project/command.py" beforeDir="false" afterPath="$PROJECT_DIR$/flask_project/command.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flask_project/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/flask_project/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flask_project/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/flask_project/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flask_project/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/flask_project/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flask_project/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/flask_project/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +34,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -90,8 +86,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.command" />
         <item itemvalue="Python.views" />
+        <item itemvalue="Python.command" />
       </list>
     </recent_temporary>
   </component>
@@ -163,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607678552012</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="kali_chonggou_zhuce">
+      <created>1607922899663</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1607922899663</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -187,6 +190,7 @@
     <MESSAGE value="kali_chonggou_004" />
     <MESSAGE value="kali_chonggou_005" />
     <MESSAGE value="kali_chonggou_006" />
-    <option name="LAST_COMMIT_MESSAGE" value="kali_chonggou_006" />
+    <MESSAGE value="kali_chonggou_zhuce" />
+    <option name="LAST_COMMIT_MESSAGE" value="kali_chonggou_zhuce" />
   </component>
 </project>

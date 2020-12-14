@@ -8,7 +8,7 @@ from flask_login import UserMixin
 class User(db.Model, UserMixin):  # 表名将会是 user（自动生成，小写处理）
     id = db.Column(db.Integer, primary_key=True)  # 主键
     name = db.Column(db.String(20))  # 名字
-    username = db.Column(db.String(20))  # 用户名
+    username = db.Column(db.String(20), unique=True)  # 用户名
     password = db.Column(db.String(128))  # 密码散列值db.db.
 
     def set_password(self, password):  # 用来设置密码的方法，接受密码作为参数
