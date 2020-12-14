@@ -16,12 +16,15 @@ def index():
         if not title1 or not year1 or len(year1) > 4 or len(title1) > 60:
             flash('输入有误')  # 显示错误提示
             return redirect(url_for('index'))  # 重定向回主页
-        movie = Movie(title=title1, year=year1)
+        movie = Movie(title=title1, year=year1, user_id=current_user.id)
         db.session.add(movie)
         db.session.commit()
         flash('添加成功')
         return redirect(url_for('index'))
-    movies = Movie.query.all()
+    if not current_user.is_authenticated:
+        movies = Movie.query.all()
+    else:
+        movies = Movie.query.filter_by(user_id=current_user.id).all()
     return render_template('index.html', movies=movies)
 
 
@@ -61,13 +64,16 @@ def login():
         if not username or not password:
             flash('用户名或密码不可为空')
             return redirect(url_for('login'))
-        user = User.query.first()
-        if user.username == username and user.validate_password(password):
+        user = User.query.filter_by(username=username).first()
+        if user is None:
+            flash('用户名错误')
+            return redirect(url_for('login'))
+        elif user.validate_password(password):
             login_user(user)
             flash('登录成功')
             return redirect(url_for('index'))
         else:
-            flash('用户名或密码错误')
+            flash('密码错误')
             return redirect(url_for('login'))
     return render_template('login.html')
 
@@ -97,6 +103,33 @@ def settings():
         flash('修改用户名成功')
         return redirect(url_for('index'))
     return render_template('setting.html')
+
+
+@app.route('/sign_in.html', methods=['GET', 'POST'])
+def sign_in():
+    if request.method == 'POST':
+        name = request.form.get('name')
+        username = request.form.get('username')
+        pwd = request.form.get('password')
+        print(pwd)
+        if not name or len(name) > 20 or len(name) < 5:
+            flash('Wrong name')
+            return redirect(url_for('sign_in'))
+        elif not username or len(username) > 20:
+            flash('Wrong username')
+            return redirect(url_for('sign_in'))
+        elif not pwd or len(pwd) > 20 or len(pwd) < 5:
+            flash('Wrong password')
+            return redirect(url_for('sign_in'))
+        else:
+            pwd = User().set_password(password=pwd)  # 设置密码
+            print(pwd)
+            user = User(username=username, password=pwd, name=name)
+            db.session.add(user)
+            db.session.commit()
+            flash('registered successfully ')
+            return redirect(url_for('login'))
+    return render_template('sign_in.html')
 
 
 if __name__ == '__main__':

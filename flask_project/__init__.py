@@ -4,10 +4,10 @@
 from importlib import reload
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from flask_login import LoginManager
+from flask_login import LoginManager, current_user
 import sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
+# reload(sys)
+# sys.setdefaultencoding('utf-8')
 
 
 # WIN = sys.platform.startswith('win')   # sqlite数据库
@@ -36,8 +36,12 @@ def load_user(user_id):  # 创建用户加载回调函数，接受用户 ID 作�
 @app.context_processor  # 定义了自动引入的变量user，往后的页面都会自动带上user这个参数
 def inject_user():
     from flask_project.models import User
-    user = User.query.first()
-    return dict(user=user)
+    if not current_user.is_authenticated:
+        user = User.query.first()
+        return dict(user=user)
+    else:
+        user = User.query.filter_by(username=current_user.username).first()
+        return dict(user=user)
 
 
 from flask_project import views, errors, command

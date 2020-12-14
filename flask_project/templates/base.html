@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     {% block head %}
     <meta charset="utf-8">
@@ -17,7 +17,11 @@
     <h2>...</h2>
     <h2>
 <!--        <img alt="Avatar" class="avatar" src="{{ url_for('static', filename='images/avatar.png') }}">-->
-        {{ user.name }}'s Watchlist
+        {% if current_user.is_authenticated %}
+            {{ user.name }}'s Watchlist
+        {% else %}
+            Grey Li's Watchlist
+        {% endif %}
     </h2>
     <nav>
         <ul>
@@ -27,12 +31,13 @@
                 <li><a href="{{ url_for('logout') }}">Logout</a></li>
             {% else %}
                 <li><a href="{{ url_for('login') }}">Login</a></li>
+                <li><a href="{{ url_for('sign_in') }}">Sign in</a></li>
             {% endif %}
         </ul>
     </nav>
     {% block content %}{% endblock %}
     <footer>
-        <small>&copy; 2018 <a href="http://helloflask.com/tutorial">HelloFlask</a></small>
+        <small>&copy; 2018 <a href="www.cwgeek.cn">HelloFlask</a></small>
 	</footer>
 </body>
 </html>

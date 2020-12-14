@@ -13,6 +13,7 @@ class User(db.Model, UserMixin):  # 表名将会是 user（自动生成，小写
 
     def set_password(self, password):  # 用来设置密码的方法，接受密码作为参数
         self.password = generate_password_hash(password)  # 将生成的密码保持到对应字段
+        return self.password
 
     def validate_password(self, pwd):  # 用于验证密码的方法，接受密码作为参数
         return check_password_hash(self.password, pwd)  # 返回布尔值
@@ -22,3 +23,5 @@ class Movie(db.Model):
     id = db.Column(db.Integer, primary_key=True)  # 主键
     title = db.Column(db.String(60), primary_key=False)  # 电影标题
     year = db.Column(db.String(4), primary_key=False)  # 电影年份
+    user_id = db.Column(db.Integer, primary_key=False)
+

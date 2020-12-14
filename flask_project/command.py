@@ -40,22 +40,22 @@ def forge():
     db.create_all()
     name = 'Grey Li'
     movies = [
-                {'title': 'My Neighbor Totoro', 'year': '1988'},
-                {'title': 'Dead Poets Society', 'year': '1989'},
-                {'title': 'A Perfect World', 'year': '1993'},
-                {'title': 'Leon', 'year': '1994'},
-                {'title': 'Mahjong', 'year': '1996'},
-                {'title': 'Swallowtail Butterfly', 'year': '1996'},
-                {'title': 'King of Comedy', 'year': '1999'},
-                {'title': 'Devils on the Doorstep', 'year': '1999'},
-                {'title': 'WALL-E', 'year': '2008'},
-                {'title': 'The Pork of Music', 'year': '2012'},
-                {'title': '大家好，我是旺哥', 'year': '2020'}
+                {'title': 'My Neighbor Totoro', 'year': '1988', 'user_id': 1},
+                {'title': 'Dead Poets Society', 'year': '1989', 'user_id': 1},
+                {'title': 'A Perfect World', 'year': '1993', 'user_id': 1},
+                {'title': 'Leon', 'year': '1994', 'user_id': 1},
+                {'title': 'Mahjong', 'year': '1996', 'user_id': 1},
+                {'title': 'Swallowtail Butterfly', 'year': '1996', 'user_id': 1},
+                {'title': 'King of Comedy', 'year': '1999', 'user_id': 1},
+                {'title': 'Devils on the Doorstep', 'year': '1999', 'user_id': 1},
+                {'title': 'WALL-E', 'year': '2008', 'user_id': 1},
+                {'title': 'The Pork of Music', 'year': '2012', 'user_id': 1},
+                {'title': '大家好，我是旺哥', 'year': '2020', 'user_id': 1}
     ]
     name = User(name=name)
     db.session.add(name)
     for i in movies:
-        movie = Movie(title=i['title'], year=i['year'])
+        movie = Movie(title=i['title'], year=i['year'], user_id=i['user_id'])
         db.session.add(movie)
     db.session.commit()
     click.echo('Done')
